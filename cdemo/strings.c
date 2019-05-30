@@ -21,4 +21,6 @@ int main() {
   strcat(alphComb, alphTwo);
   
   printf("string one: %s\nstring two: %s\nstring three: %s\n", alphOne, alphTwo, alphComb);
+  
+  return 0;
 }
