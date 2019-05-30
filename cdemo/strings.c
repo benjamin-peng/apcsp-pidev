@@ -5,14 +5,14 @@ int main() {
   char alphOne[25];
   char alphTwo[] = "abcdefghijklmnopqrstuvwxyz";
   
-  for (int i = 0; i < 26; i++) {
+  for (int i = 0; i <= 25; i++) {
     alphOne[i] = i + 97;
   }
   
   if (strcmp(alphOne, alphTwo) == 0) printf("strings equal\n");
   
   for (int i = 0; i < 26; i++) {
-    alphTwo[i] = alphTwo[i] - 36;
+    alphTwo[i] = alphTwo[i] - 32;
   }
   
   if (strcmp(alphOne, alphTwo) != 0) printf("strings not equal\n");
