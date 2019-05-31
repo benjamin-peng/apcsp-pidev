@@ -1,21 +1,29 @@
 #include <stdio.h>
 
-int main() {
-  float start = 0;
-  float end = 0;
-  
-  printf("enter start and end bounds\n");
-  scanf("%f", &start);
-  scanf("%f", &end);
-  
-  if (start != -0) {
-      for (float i = start; i <= end; i++) {
-        float area = i * i * 3.14;
-        printf("radius %f has an area of %f\n", i, area);
-      }
+float areaOfCircle(float radius) {
+  float area = (3.1416 * radius * radius);
+  return area;
+}
+
+int main(int argc, char* argv[]) {
+  int arg = 0;
+  while (arg < argc) {
+    printf("Bound %d is %s\n", arg, argv[arg]);
+    arg++;
+  }
+  float lower, upper;
+  if (argc == 3) {
+    sscanf(argv[1], "%f", &lower);
+    sscanf(argv[2], "%f", &upper);
   }
   else {
-      printf("not a float");
+    printf("lower bound:\n");
+    scanf("%f", &lower);
+    printf("upper bound:\n");
+    scanf("%f", &upper);
   }
-  return 0;
+  for (float radius = lower; radius <= upper; radius++) {
+	float result = areaOfCircle(radius);
+	printf("area: %f: %f\n", radius, result);
+    }
 }
